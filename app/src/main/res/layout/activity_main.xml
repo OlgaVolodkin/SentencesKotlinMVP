@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/hebBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="175dp"
+        android:layout_weight="5"
+        android:background="@android:color/darker_gray"
+        android:contextClickable="true"
+        android:elevation="0dp"
+        android:text="המשפט של היום"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/engBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="175dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="35dp"
+        android:layout_weight="5"
+        android:background="@android:color/darker_gray"
+        android:contextClickable="true"
+        android:text="Today's sentence"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+</LinearLayout>
