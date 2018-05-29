@@ -7,12 +7,15 @@ interface MainInterface {
 
     interface View {
         fun startSentenceActivity(intent: Intent)
+        fun showInternetDialog()
+        fun ifComplete(sentList: ArrayList<String>?, lngFlag: Int)
     }
 
     interface Model {}
 
     interface Presenter {
-      fun  startSentencesActivity(currentSent: String, context: Context, flag: Int)
+        fun  makingDataToSentencesActivity(currentSent: String?, context: Context, flag: Int)
+        fun downloadSentences(lngFlag: Int)
     }
 
 }

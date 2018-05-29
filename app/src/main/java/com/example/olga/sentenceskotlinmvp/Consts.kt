@@ -12,6 +12,8 @@ object Consts {
 
     }
 
-
+    object Retrofit{
+        val BASE_URL = "https://sentences-cbddf.firebaseio.com/"
+    }
 }
 

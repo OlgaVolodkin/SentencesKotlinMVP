@@ -5,7 +5,7 @@
     <string name="pref_heb">MySentenceHeb</string>
     <string name="flag_lang">languageFlag</string>
     <string name="dialog_internet_eng_text">Oops! Something went wrong. Please, check you internet or try later</string>
-    <string name="dialog_internet_heb_text">ERRORTEST</string>
+    <string name="dialog_internet_heb_text">ERROR TEST</string>
     <string name="internet">internet</string>
     <string name="ok">OK</string>
     <string name="eng_url">https://sentences-cbddf.firebaseio.com/eng.json</string>
