@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 
 interface SentencesInterface {
-
     interface View {
         fun setBackgroundPic(pic: Int)
         fun setSentenceText(currentSentence: String)
@@ -15,5 +14,4 @@ interface SentencesInterface {
     interface Presenter {
         fun setSentence(intent: Intent, context: Context)
     }
-
 }

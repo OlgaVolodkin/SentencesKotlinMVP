@@ -16,17 +16,17 @@ class SentencesActivity : AppCompatActivity(), SentencesInterface.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sentences)
-
         setInitial()
+        checkData()
+    }
 
+    private fun checkData() {
         val intentSent = intent
-
         if (isDataAvailable(intentSent)) {
-           presenter?.setSentence(intentSent, this)
+            presenter?.setSentence(intentSent, this)
         } else {
             Log.d(TAG, "Intent is null")
         }
-
     }
 
     private fun setInitial() {
@@ -39,12 +39,10 @@ class SentencesActivity : AppCompatActivity(), SentencesInterface.View {
 
     override fun setSentenceText(currentSentence: String) {
         Log.d(TAG, currentSentence)
-
         sentenceTextView.text = currentSentence
     }
 
     override fun setBackgroundPic(pic: Int) {
        parentLayout.setBackgroundResource(pic)
     }
-
 }

@@ -14,8 +14,9 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:textColor="@android:color/holo_red_light"
-        android:text="firstText"
         android:textSize="30dp"
         android:textStyle="bold|italic" />
 </LinearLayout>

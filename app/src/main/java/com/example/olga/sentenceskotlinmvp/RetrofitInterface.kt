@@ -3,20 +3,15 @@ package com.example.olga.sentenceskotlinmvp
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-
+import retrofit2.http.Path
 
 interface RetrofitInterface {
 
-    @GET("eng.json")
-    fun getSentEng(): retrofit2.Call<ArrayList<String>>
+    // @GET("eng.json")
+    // fun getSentEng(): retrofit2.Call<ArrayList<String>>
 
-    @GET("heb.json")
-    fun getSentHeb(): retrofit2.Call<ArrayList<String>>
-
-/*
-    @GET("{id}?api_key=dc310ae1f74743b9985a714c9e201984&language=en-US&append_to_response=videos")
-    fun getItemResults(@Path("id") id: Int?): Call<PopularMovieDetailPojo>
-*/
+    @GET("{lng}.json")
+    fun getSent(@Path("lng") lng: String): retrofit2.Call<ArrayList<String>>
 
     //factory
     object Factory {

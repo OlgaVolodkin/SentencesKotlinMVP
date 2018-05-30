@@ -16,7 +16,7 @@ class SentencesPresenter(view: SentencesInterface.View): SentencesInterface.Pres
     }
 
     override fun setSentence(intent: Intent, context: Context) {
-        val flg = intent.getIntExtra(context.getString(flag_lang), 0)
+        val flg = intent.getStringExtra(context.getString(flag_lang))
         if (flg == Consts.Main.HEB) {
            view?.setBackgroundPic(R.drawable.imageheb)
         }
@@ -25,5 +25,4 @@ class SentencesPresenter(view: SentencesInterface.View): SentencesInterface.Pres
         }
         view?.setSentenceText(intent.getStringExtra(context.getString(sent_str)))
    }
-
 }
