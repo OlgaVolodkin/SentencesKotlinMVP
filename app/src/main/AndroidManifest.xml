@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.example.olga.sentenceskotlinmvp.ui.main.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".sentences.SentencesActivity"
+            android:name="com.example.olga.sentenceskotlinmvp.ui.sentences.SentencesActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
 

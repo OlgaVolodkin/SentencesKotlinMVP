@@ -1,4 +1,4 @@
-package com.example.olga.sentenceskotlinmvp
+package com.example.olga.sentenceskotlinmvp.consts
 
 object Consts {
 

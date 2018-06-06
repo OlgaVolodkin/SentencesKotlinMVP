@@ -1,4 +1,4 @@
-package com.example.olga.sentenceskotlinmvp.sentences
+package com.example.olga.sentenceskotlinmvp.ui.sentences
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package com.example.olga.sentenceskotlinmvp.main
+package com.example.olga.sentenceskotlinmvp.ui.main
 
 import android.content.Context
 import android.content.Intent
@@ -14,7 +14,7 @@ interface MainInterface {
     interface Model {}
 
     interface Presenter {
-        fun  makingDataToSentencesActivity(currentSent: String?, context: Context, lng: String)
+        fun makingDataToSentencesActivity(currentSent: String?, context: Context, lng: String)
         fun downloadSentences(lng: String)
     }
 }

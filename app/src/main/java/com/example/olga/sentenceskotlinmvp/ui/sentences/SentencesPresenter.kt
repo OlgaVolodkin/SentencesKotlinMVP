@@ -1,8 +1,8 @@
-package com.example.olga.sentenceskotlinmvp.sentences
+package com.example.olga.sentenceskotlinmvp.ui.sentences
 
 import android.content.Context
 import android.content.Intent
-import com.example.olga.sentenceskotlinmvp.Consts
+import com.example.olga.sentenceskotlinmvp.consts.Consts
 import com.example.olga.sentenceskotlinmvp.R
 import com.example.olga.sentenceskotlinmvp.R.string.flag_lang
 import com.example.olga.sentenceskotlinmvp.R.string.sent_str

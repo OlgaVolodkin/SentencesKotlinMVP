@@ -1,15 +1,15 @@
-package com.example.olga.sentenceskotlinmvp.main
+package com.example.olga.sentenceskotlinmvp.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import com.example.olga.sentenceskotlinmvp.Consts.Main.ENG
-import com.example.olga.sentenceskotlinmvp.Consts.Main.HEB
-import com.example.olga.sentenceskotlinmvp.NoInternetDialogFragment
 import com.example.olga.sentenceskotlinmvp.R
 import com.example.olga.sentenceskotlinmvp.R.string.internet
+import com.example.olga.sentenceskotlinmvp.consts.Consts.Main.ENG
+import com.example.olga.sentenceskotlinmvp.consts.Consts.Main.HEB
+import com.example.olga.sentenceskotlinmvp.ui.NoInternetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(), MainInterface.View {
     }
 
     override fun showInternetDialog() {
+        stopProgressBar()
         supportFragmentManager.beginTransaction().add(NoInternetDialogFragment(),
                 getString(internet)).commitAllowingStateLoss()
     }

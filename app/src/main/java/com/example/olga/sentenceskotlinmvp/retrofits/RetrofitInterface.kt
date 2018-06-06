@@ -1,5 +1,6 @@
-package com.example.olga.sentenceskotlinmvp
+package com.example.olga.sentenceskotlinmvp.retrofits
 
+import com.example.olga.sentenceskotlinmvp.consts.Consts
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
