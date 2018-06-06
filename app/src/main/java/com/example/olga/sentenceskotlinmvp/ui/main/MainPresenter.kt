@@ -3,7 +3,7 @@ package com.example.olga.sentenceskotlinmvp.ui.main
 import android.content.Context
 import android.content.Intent
 import com.example.olga.sentenceskotlinmvp.R
-import com.example.olga.sentenceskotlinmvp.managers.DownloadManager
+import com.example.olga.sentenceskotlinmvp.managers.DownloadSentencesManager
 import com.example.olga.sentenceskotlinmvp.managers.DownloadSentencesManagerInterface
 import com.example.olga.sentenceskotlinmvp.ui.sentences.SentencesActivity
 import retrofit2.Response
@@ -17,7 +17,7 @@ class MainPresenter (view: MainInterface.View): MainInterface.Presenter, Downloa
 
     init {
         this.view = view
-        this.downloadManager = DownloadManager()
+        this.downloadManager = DownloadSentencesManager()
     }
 
 
