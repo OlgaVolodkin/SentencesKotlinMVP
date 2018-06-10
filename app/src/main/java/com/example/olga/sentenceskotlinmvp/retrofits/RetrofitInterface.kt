@@ -12,9 +12,9 @@ interface RetrofitInterface {
     // fun getSentEng(): retrofit2.Call<ArrayList<String>>
 
     @GET("{lng}.json")
-    fun getSent(@Path("lng") lng: String): retrofit2.Call<ArrayList<String>>
+    fun getSent(@Path("language") sentenceLanguage: String): retrofit2.Call<ArrayList<String>>
 
-    //factory
+
     object Factory {
         private var service: RetrofitInterface? = null
         private val baseUrl: String = Consts.Retrofit.BASE_URL

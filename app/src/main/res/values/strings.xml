@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SentencesKotlinMVP</string>
     <string name="sent_str">sent</string>
-    <string name="flag_lang">languageFlag</string>
+    <string name="language">language</string>
     <string name="dialog_internet_text">Oops! Something went wrong. Please, check you internet or try later</string>
     <string name="internet">internet</string>
     <string name="ok">OK</string>

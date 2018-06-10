@@ -9,7 +9,7 @@ import com.example.olga.sentenceskotlinmvp.ui.sentences.SentencesActivity
 import retrofit2.Response
 import java.util.*
 
-class MainPresenter (view: MainInterface.View): MainInterface.Presenter, DownloadSentencesManagerInterface.ModelListener {
+class MainPresenter (view: MainInterface.View): MainInterface.Presenter, DownloadSentencesManagerInterface.DownloadListener {
 
     private val TAG = "MainPresenter"
     private var view: MainInterface.View? = null
@@ -21,27 +21,33 @@ class MainPresenter (view: MainInterface.View): MainInterface.Presenter, Downloa
     }
 
 
-    override fun makingDataToSentencesActivity(currentSent: String?, context: Context, lng: String) {
+    override fun makingDataToSentencesActivity(currentSentence: String?, context: Context, sentenceLanguage: String) {
         val intent = Intent(context, SentencesActivity::class.java)
-        intent.putExtra(context.getString(R.string.sent_str), currentSent)
-        intent.putExtra(context.getString(R.string.flag_lang), lng)
+        intent.putExtra(context.getString(R.string.sent_str), currentSentence)
+        intent.putExtra(context.getString(R.string.language), sentenceLanguage)
         view?.startSentenceActivity(intent)
     }
 
 
-    override fun downloadSentences(lng: String) {
-        downloadManager?.downloadSentences(lng, this)
+    override fun downloadSentences(sentenceLanguage: String) {
+        downloadManager?.downloadSentences(sentenceLanguage, this)
     }
 
 
-    override fun downloadSentencesSuccess(response: Response<ArrayList<String>>, lng: String) {
-        if (response.body() == null) {
+    override fun downloadSentencesSuccess(downloadResponse: Response<ArrayList<String>>, sentenceLanguage: String) {
+        if (downloadResponse.body()?.size != 0) {
+            val currentSent = getSentence(downloadResponse.body()!!)
+            view?.setCurrentSentence(currentSent, sentenceLanguage)
+        }
+        else {
             view?.showInternetDialog()
-        } else {
-            view?.ifComplete(response.body()!!, lng)
         }
     }
 
+    private fun getSentence(sentList: ArrayList<String>): String {
+        val i = Random().nextInt(sentList.size)
+        return sentList[i]
+    }
 
     override fun downloadSentencesFailure() {
         view?.showInternetDialog()

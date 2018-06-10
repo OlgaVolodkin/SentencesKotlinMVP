@@ -11,11 +11,12 @@ class DownloadSentencesManager: DownloadSentencesManagerInterface {
 
     private val TAG = "DownloadSentenceManager"
 
-    override fun downloadSentences(lng: String, listener: DownloadSentencesManagerInterface.ModelListener) {
-        val call = RetrofitInterface.Factory.instance?.getSent(lng)
+    override fun downloadSentences(sentenceLanguage: String,
+                                   listener: DownloadSentencesManagerInterface.DownloadListener) {
+        val call = RetrofitInterface.Factory.instance?.getSent(sentenceLanguage)
         call?.enqueue(object : Callback<ArrayList<String>> {
             override fun onResponse(call: Call<ArrayList<String>>, response: Response<ArrayList<String>>) {
-                listener.downloadSentencesSuccess(response, lng)
+                listener.downloadSentencesSuccess(response, sentenceLanguage)
             }
             override fun onFailure(call: Call<ArrayList<String>>, t: Throwable) {
                 Log.d(TAG, t.message)

@@ -5,12 +5,10 @@ import java.util.*
 
 interface DownloadSentencesManagerInterface {
 
-    interface ModelListener {
-
-        fun downloadSentencesSuccess(response: Response<ArrayList<String>>, lng: String)
+    interface DownloadListener {
+        fun downloadSentencesSuccess(downloadResponse: Response<ArrayList<String>>, sentenceLanguage: String)
         fun downloadSentencesFailure()
     }
 
-    fun downloadSentences(lng: String, listener: ModelListener)
-
+    fun downloadSentences(lng: String, listener: DownloadListener)
 }

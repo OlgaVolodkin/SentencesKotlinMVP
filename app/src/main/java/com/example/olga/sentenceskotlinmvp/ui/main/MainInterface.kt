@@ -8,13 +8,13 @@ interface MainInterface {
     interface View {
         fun startSentenceActivity(intent: Intent)
         fun showInternetDialog()
-        fun ifComplete(sentList: ArrayList<String>, lng: String)
+        fun setCurrentSentence(currentSent: String, sentenceLanguage: String)
     }
 
     interface Model {}
 
     interface Presenter {
-        fun makingDataToSentencesActivity(currentSent: String?, context: Context, lng: String)
-        fun downloadSentences(lng: String)
+        fun makingDataToSentencesActivity(currentSentence: String?, context: Context, sentenceLanguage: String)
+        fun downloadSentences(sentenceLanguage: String)
     }
 }

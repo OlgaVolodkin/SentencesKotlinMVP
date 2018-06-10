@@ -11,7 +11,6 @@ import com.example.olga.sentenceskotlinmvp.consts.Consts.Main.ENG
 import com.example.olga.sentenceskotlinmvp.consts.Consts.Main.HEB
 import com.example.olga.sentenceskotlinmvp.ui.NoInternetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 class MainActivity : AppCompatActivity(), MainInterface.View {
 
@@ -27,7 +26,9 @@ class MainActivity : AppCompatActivity(), MainInterface.View {
 
     override fun onResume() {
         super.onResume()
-        stopProgressBar()
+        if (progressBar.visibility == VISIBLE) {
+            stopProgressBar()
+        }
     }
 
     private fun setInitial() {
@@ -48,14 +49,8 @@ class MainActivity : AppCompatActivity(), MainInterface.View {
     private fun stopProgressBar() { progressBar.visibility = GONE }
     private fun startProgressBar() { progressBar.visibility  = VISIBLE }
 
-    override fun ifComplete(sentList: ArrayList<String>, lng: String) {
-        if (sentList.size != 0) {
-            val i = Random().nextInt(sentList.size)
-            val currentSent = sentList[i]
-            presenter?.makingDataToSentencesActivity(currentSent, this@MainActivity, lng)
-        } else {
-            showInternetDialog()
-        }
+    override fun setCurrentSentence(currentSent: String, sentenceLanguage: String) {
+        presenter?.makingDataToSentencesActivity(currentSent, this@MainActivity, sentenceLanguage)
     }
 
     override fun showInternetDialog() {
@@ -65,6 +60,7 @@ class MainActivity : AppCompatActivity(), MainInterface.View {
     }
 
     override fun startSentenceActivity(intent: Intent) {
+        stopProgressBar()
         startActivity(intent)
     }
 }
