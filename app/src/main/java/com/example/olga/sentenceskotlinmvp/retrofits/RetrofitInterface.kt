@@ -12,7 +12,7 @@ interface RetrofitInterface {
     // fun getSentEng(): retrofit2.Call<ArrayList<String>>
 
     @GET("{lng}.json")
-    fun getSent(@Path("language") sentenceLanguage: String): retrofit2.Call<ArrayList<String>>
+    fun getSent(@Path("lng") sentenceLanguage: String): retrofit2.Call<ArrayList<String>>
 
 
     object Factory {
